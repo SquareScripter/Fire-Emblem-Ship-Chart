@@ -1,1 +1,43 @@
-Hello World
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+		select {width: 100%;}
+	</style>
+	<script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+	<div id="container" style="width:100%;">                                   
+		<div id="left" style="float:left; width:200px;">
+			<section style="margin:15px;">
+				<select id="cb_game" onchange="refresh();" style="margin:10px 0;">
+					<option value="a">Awakening</option>
+				</select>
+				<select id="cb_hf" onchange="refresh();">
+					<option value="m">Male MU</option>
+					<option value="f">Female MU</option>
+				</select>
+				<table id="spouse_choices" style="width:100%; padding: 10px 0;"></table>
+				<button onclick="onGenerateBigImage();" style="width:100%;">Show Full Size</button>
+				<section style="padding:10px 0;">
+					<section style="width:100%; text-align:center; font-weight:bold">Save Code :</section>
+					<section id="save_code" style="width:100%; text-align:center; border-style:solid; border-width:1px"></section>
+				</section>
+				<button onclick="onLoadSave();" style="width:100%;">Load Save</button>
+			</section>
+		</div>            
+		<div id="right" style="float:left;">
+			<canvas id="canvas" width="500" height="500" style="border-style: solid;"></canvas>
+		</div>
+		<div style="clear: both;"></div>
+	</div>    
+	<script>
+		init();
+	</script>
+</body>
+<footer style="position: absolute; width: 100%; bottom: 0; text-align: center;">
+	<p>Thanks to <a href="http://redtroubadour.tumblr.com/">redtroubadour</a> for letting me use his chart !
+	<br>Please note that this is an unofficial site, and that the Fire Emblem series belongs to Nintendo.</p>
+</footer>
+</html>
