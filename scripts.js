@@ -99,8 +99,10 @@ function processParams()
 
 function initGameSpecific() {
 	var e = document.getElementById("cb_game");
-	// Only awakening for now
-	initAwakening();
+	if(e.value == "b") // Birthrght
+		initBirthright();
+	else // Awakening
+		initAwakening();
 }
 
 function initAwakening() {
@@ -129,6 +131,37 @@ function initAwakening() {
 	marryable['Tharja'] = {x:349, y:65, spouse:"", spChoices:["MaMU","Frederick","Virion","Vaike","Stahl","Kellam","Lonqu","Ricken","Gaius","Gregor","Libra","Henry","Donnel"]}
 	marryable['Nowi'] = {x:585, y:36, spouse:"", spChoices:["MaMU","Frederick","Virion","Vaike","Stahl","Kellam","Lonqu","Ricken","Gaius","Gregor","Libra","Henry","Donnel"]}
 
+	removeWrongMU(e.value);
+}
+
+function initBirthright() {
+	// Files
+	charsFolder = "Img/Chars/Fates/";
+	bgPict = ["Img/template_birthright_mamu.png", "Img/template_birthright_femu.png"];
+	
+	marryable = {};
+	// MU
+	var e = document.getElementById("cb_hf");
+	if(e.value == "m")
+		marryable['MaMU'] = {x:30, y:528, spouse:"", spChoices:["Anna","Azura","Caeldori","Felicia","Hana","Hinoka","Kagero","Midori","Mitama","Mozu","Oboro","Orochi","Reina","Rhajat","Rinkah","Sakura","Scarlet","Selkie","Setsuna","Sophie"]}
+	else
+		marryable['FeMU'] = {x:45, y:645, spouse:"", spChoices:["Asugi","Azama","Dwyer","Hayato","Hinata","Hisame","Izana","Jakob","Kaden","Kaze","Kiragi","Rhajat","Ryoma","Saizo","Shigure","Shiro","Shura","Silas","Subaki","Takumi","Yukimura"]}
+	
+	marryable['Kaze'] = {x:85, y:295, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Azura'] = {x:153, y:200, spouse:"", spChoices:["MaMU","Jakob","Silas","Kaze","Ryoma","Takumi","Saizo","Kaden","Hinata","Azama","Subaki","Hayato"]}
+	marryable['Silas'] = {x:462, y:36, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Saizo'] = {x:699, y:64, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Hinata'] = {x:903, y:200, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Kaden'] = {x:1003, y:407, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Takumi'] = {x:1003, y:646, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Subaki'] = {x:904, y:862, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Azama'] = {x:700, y:991, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Ryoma'] = {x:461, y:1019, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Hayato'] = {x:242, y:939, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Jakob'] = {x:85, y:761, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	
+	
+	
 	removeWrongMU(e.value);
 }
 
