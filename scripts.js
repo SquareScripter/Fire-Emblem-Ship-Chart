@@ -151,16 +151,14 @@ function initBirthright() {
 	marryable['Azura'] = {x:153, y:200, spouse:"", spChoices:["MaMU","Jakob","Silas","Kaze","Ryoma","Takumi","Saizo","Kaden","Hinata","Azama","Subaki","Hayato"]}
 	marryable['Silas'] = {x:462, y:36, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
 	marryable['Saizo'] = {x:699, y:64, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	marryable['Hinata'] = {x:903, y:200, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	marryable['Kaden'] = {x:1003, y:407, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Subaki'] = {x:903, y:200, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Hinata'] = {x:1003, y:407, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
 	marryable['Takumi'] = {x:1003, y:646, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	marryable['Subaki'] = {x:904, y:862, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	marryable['Azama'] = {x:700, y:991, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	marryable['Ryoma'] = {x:461, y:1019, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	marryable['Hayato'] = {x:242, y:939, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Azama'] = {x:904, y:862, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Hayato'] = {x:700, y:991, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Kaden'] = {x:461, y:1019, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Ryoma'] = {x:242, y:939, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
 	marryable['Jakob'] = {x:85, y:761, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	
-	
 	
 	removeWrongMU(e.value);
 }
