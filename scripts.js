@@ -101,6 +101,8 @@ function initGameSpecific() {
 	var e = document.getElementById("cb_game");
 	if(e.value == "b") // Birthrght
 		initBirthright();
+	else if(e.value == "c") // Conquest
+		initConquest();
 	else // Awakening
 		initAwakening();
 }
@@ -154,11 +156,42 @@ function initBirthright() {
 	marryable['Subaki'] = {x:903, y:200, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
 	marryable['Hinata'] = {x:1003, y:407, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
 	marryable['Takumi'] = {x:1003, y:646, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	marryable['Azama'] = {x:904, y:862, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Azama'] = {x:902, y:862, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
 	marryable['Hayato'] = {x:700, y:991, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
-	marryable['Kaden'] = {x:461, y:1019, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	marryable['Kaden'] = {x:460, y:1019, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
 	marryable['Ryoma'] = {x:242, y:939, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
 	marryable['Jakob'] = {x:85, y:761, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro"]}
+	
+	removeWrongMU(e.value);
+}
+
+function initConquest() {
+	// Files
+	charsFolder = "Img/Chars/Fates/";
+	bgPict = ["Img/template_conquest_mamu.png", "Img/template_conquest_femu.png"];
+	
+	marryable = {};
+	// MU
+	var e = document.getElementById("cb_hf");
+	if(e.value == "m")
+		marryable['MaMU'] = {x:30, y:528, spouse:"", spChoices:["Azura","Beruka","Camilla","Charlotte","Effie","Elise","Felicia","Flora","Mozu","Niles","Nyx","Peri","Selena"]}
+	else
+		marryable['FeMU'] = {x:45, y:645, spouse:"", spChoices:["Arthur","Benny","Gunter","Izana","Jakob","Kaze","Keaton","Laslow","Leo","Niles","Odin","Shura","Silas","Xander"]}
+	
+	marryable['Kaze'] = {x:85, y:295, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Azura'] = {x:153, y:200, spouse:"", spChoices:["MaMU,Jakob","Silas","Kaze","Xander","Leo","Benny","Keaton","Arthur","Odin","Laslow","Niles"]}
+	marryable['Silas'] = {x:462, y:36, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Leo'] = {x:699, y:64, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Benny'] = {x:903, y:200, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Niles'] = {x:1003, y:407, spouse:"", spChoices:["MaMU","FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Odin'] = {x:1003, y:646, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Arthur'] = {x:902, y:862, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Xander'] = {x:700, y:991, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Laslow'] = {x:460, y:1019, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Keaton'] = {x:242, y:939, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Jakob'] = {x:85, y:761, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	
+	
 	
 	removeWrongMU(e.value);
 }
