@@ -103,6 +103,8 @@ function initGameSpecific() {
 		initBirthright();
 	else if(e.value == "c") // Conquest
 		initConquest();
+	else if(e.value == "r") // Revelations
+		initRevelations();
 	else // Awakening
 		initAwakening();
 }
@@ -145,7 +147,7 @@ function initBirthright() {
 	// MU
 	var e = document.getElementById("cb_hf");
 	if(e.value == "m")
-		marryable['MaMU'] = {x:30, y:528, spouse:"", spChoices:["Anna","Azura","Caeldori","Felicia","Hana","Hinoka","Kagero","Midori","Mitama","Mozu","Oboro","Orochi","Reina","Rhajat","Rinkah","Sakura","Scarlet","Selkie","Setsuna","Sophie"]}
+		marryable['MaMU'] = {x:30, y:528, spouse:"", spChoices:["Azura","Caeldori","Felicia","Hana","Hinoka","Kagero","Midori","Mitama","Mozu","Oboro","Orochi","Reina","Rhajat","Rinkah","Sakura","Scarlet","Selkie","Setsuna","Sophie"]}
 	else
 		marryable['FeMU'] = {x:45, y:645, spouse:"", spChoices:["Asugi","Azama","Dwyer","Hayato","Hinata","Hisame","Izana","Jakob","Kaden","Kaze","Kiragi","Rhajat","Ryoma","Saizo","Shigure","Shiro","Shura","Silas","Subaki","Takumi","Yukimura"]}
 	
@@ -196,6 +198,48 @@ function initConquest() {
 	removeWrongMU(e.value);
 }
 
+function initRevelations() {
+	// Files
+	charsFolder = "Img/Chars/Fates/";
+	bgPict = ["Img/template_revelations_mamu.png", "Img/template_revelations_femu.png"];
+	
+	marryable = {};
+	// MU
+	var e = document.getElementById("cb_hf");
+	if(e.value == "m")
+		marryable['MaMU'] = {x:844, y:330, spouse:"", spChoices:["Anna","Azura","Beruka","Caeldori","Camilla","Charlotte","Effie","Elise","Felicia","Flora","Forrest","Hana","Hinoka","Kagero","Midori","Mitama","Mozu","Niles","Nina","Nyx","Oboro","Ophelia","Orochi","Peri","Reina","Rhajat","Rinkah","Sakura","Scarlet","Selena","Selkie","Setsuna","Soleil","Sophie","Velouria"]}
+	else
+		marryable['FeMU'] = {x:720, y:329, spouse:"", spChoices:["Arthur","Asugi","Azama","Benny","Dwyer","Fuga","Gunter","Hayato","Hinata","Hisame","Ignatius","Izana","Jakob","Kaden","Kaze","Keaton","Kiragi","Laslow","Leo","Niles","Odin","Percy","Rhajat","Ryoma","Saizo","Shigure","Shiro","Shura","Siegbert","Silas","Subaki","Takumi","Xander","Yukimura"]}
+	
+	marryable['Kaze'] = {x:993, y:734, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Azura'] = {x:565, y:737, spouse:"", spChoices:["MaMU","Jakob","Silas","Kaze","Ryoma","Takumi","Saizo","Kaden","Hinata","Azama","Subaki","Hayato","Xander","Leo","Benny","Keaton","Arthur","Odin","Laslow","Niles"]}
+	marryable['Silas'] = {x:443, y:347, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Jakob'] = {x:1157, y:463, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+
+	marryable['Saizo'] = {x:85, y:295, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Subaki'] = {x:242, y:939, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Hinata'] = {x:85, y:761, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Takumi'] = {x:242, y:121, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Azama'] = {x:30, y:528, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Hayato'] = {x:461, y:1019, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Kaden'] = {x:700, y:991, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Ryoma'] = {x:462, y:36, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+
+	marryable['Leo'] = {x:1274, y:64, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Benny'] = {x:1275, y:991, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Niles'] = {x:1578, y:407, spouse:"", spChoices:["MaMU","FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Odin'] = {x:1578, y:646, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Arthur'] = {x:1478, y:861, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Xander'] = {x:1037, y:36, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Laslow'] = {x:1478, y:200, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	marryable['Keaton'] = {x:1036, y:1019, spouse:"", spChoices:["FeMU","Felicia","Azura","Mozu","Hinoka","Sakura","Rinkah","Orochi","Kagero","Hana","Setsuna","Oboro","Camilla","Elise","Charlotte","Effie","Peri","Beruka","Selena","Nyx"]}
+	
+	
+	
+	
+	removeWrongMU(e.value);
+}
+
 // Remove MU of opposite gender
 function removeWrongMU(gender) {
 	var wrongMU;
@@ -222,17 +266,14 @@ function ReloadCanvas() {
     img.onload=function(){
 		if("size" in params && params["size"] == "full")
 		{
-			c.width = img.width;
-			c.height = img.height;
 			scale = 1;
 		}
 		else
 		{
-			scale = c.width / img.width;
-			var scale2 = c.height / img.height;
-			if(scale2 < scale)
-				scale = scale2;
+			scale = c.height / img.height;
 		}
+		c.width = img.width * scale;
+		c.height = img.height * scale;
 		
 		var height = img.height * scale;
 		var width = img.width * scale;
